@@ -6,18 +6,18 @@ type Props = {
 };
 
 export default function PlayerCard({ player }: Props) {
-  if (!player) return <div className="p-4 text-white">Select a player</div>;
+  if (!player) return <div className="px-6 py-4text-white">Select a player</div>;
 
   return (
-    <div className="border border-lightBg rounded-[8px] shadow-md w-full h-full flex flex-col overflow-hidden">
-      <div className="h-1/2 w-full relative">
+    <div className="border border-lightBg rounded-[8px] shadow-md shadow-lg w-full h-full flex flex-col overflow-hidden">
+      <div className="h-1/2 w-full relative flex items-end">
         <img
           src="/icons/player.png"
           alt={player.operatorPlayerName}
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="w-full h-[95%] object-contain absolute bottom-0 left-0"
         />
       </div>
-      <div className="h-1/2 w-full flex flex-col">
+      <div className="h-1/2 w-full flex flex-col bg-lightBg">
         <div className="h-1/4 flex items-center justify-center">
           <p className="font-inter font-normal text-[32px] text-white text-center">
             {player.operatorPlayerName}

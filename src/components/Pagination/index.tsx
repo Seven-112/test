@@ -26,10 +26,10 @@ export default function Pagination({
   const endIndex = Math.min(page * rowsPerPage, totalRows);
 
   return (
-    <div className="flex items-center justify-between bg-midBg p-4 rounded-b-lg gap-4 text-2xl text-white font-inter font-normal">
+    <div className="flex items-center justify-between bg-midBg px-6 py-4 rounded-b-lg gap-4 text-2xl text-white font-inter font-normal">
       <div className="flex items-center gap-2">
         <span>Page</span>
-        <div className="relative w-20">
+        <div className="relative w-20 ml-2">
           <select
             value={page}
             onChange={(e) => onPageChange(Number(e.target.value))}
@@ -49,7 +49,7 @@ export default function Pagination({
 
       <div className="flex items-center gap-2">
         <span>Rows per page</span>
-        <div className="relative w-20">
+        <div className="relative w-20 ml-2">
           <select
             value={rowsPerPage}
             onChange={(e) => onRowsPerPageChange(Number(e.target.value))}

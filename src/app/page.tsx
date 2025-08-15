@@ -47,7 +47,7 @@ export default function Home() {
       />
       <div className="flex flex-1 gap-6 px-6 mb-6 overflow-hidden w-full">
         <div className="flex-[0.7] border border-lightBg rounded-[8px] flex flex-col h-full overflow-hidden">
-          <div className="flex-1 overflow-auto">
+          <div className="flex-1 bg-lightBg overflow-auto">
             <PlayerTable
               players={paginatedPlayers}
               selectedPlayerId={selectedPlayer?.playerId || null}

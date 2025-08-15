@@ -12,6 +12,8 @@ export const useCatalog = () => {
   useEffect(() => {
     if (!data) {
       dispatch(fetchCatalogRequest());
+    } else {
+      console.log("data: ", data);
     }
   }, [dispatch, data]);
 

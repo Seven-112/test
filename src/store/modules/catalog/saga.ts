@@ -2,11 +2,10 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import { fetchCatalogSuccess, fetchCatalogFailure, FETCH_CATALOG_REQUEST } from "./actions";
 import { Catalog } from "@/utils/type";
 
-function fetchCatalogApi() {
-  return fetch("/api/data").then(res => {
-    if (!res.ok) throw new Error("Failed to fetch catalog");
-    return res.json() as Promise<Catalog>;
-  });
+async function fetchCatalogApi() {
+  const res = await fetch("/api/data");
+  if (!res.ok) throw new Error("Failed to fetch catalog");
+  return await (res.json() as Promise<Catalog>);
 }
 
 function* fetchCatalogSaga() {
@@ -17,7 +16,7 @@ function* fetchCatalogSaga() {
     yield put(fetchCatalogFailure(error.message || "Failed to fetch catalog"));
   }
 }
-  
+
 export default function* catalogWatcherSaga() {
   yield takeLatest(FETCH_CATALOG_REQUEST, fetchCatalogSaga);
 }
